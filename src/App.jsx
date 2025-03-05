@@ -375,7 +375,7 @@ function App() {
               </label>
               <input
                 id="tel"
-                type="text"
+                type="tel"
                 className={`form-control border-3 ${errors.tel && 'is-invalid'}`}
                 placeholder="請輸入電話"
                 {...register('tel', {
@@ -418,7 +418,7 @@ function App() {
             ></textarea>
             </div>
             <div className="text-end">
-              <button type="submit" className="btn btn-danger w-100 p-3">
+              <button type="submit" className={`btn btn-danger w-100 p-3 ${cart.carts.length === 0 && 'disabled'}`}>
                 送出訂單
               </button>
             </div>

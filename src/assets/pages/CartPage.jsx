@@ -15,6 +15,7 @@ export default function CartPage() {
     try {
       const res = await axios.get(`${BASE_URL}v2/api/${API_PATH}/cart`);
       setCart(res.data.data);
+			console.log(cart)
     } catch (error) {
       alert('取得購物車失敗')
     }
@@ -249,11 +250,10 @@ export default function CartPage() {
 					></textarea>
 					</div>
 					<div className="text-end">
-						<button type="submit" className="btn btn-danger w-100 p-3">
+						<button type="submit" className={`btn btn-danger w-100 p-3 ${cart.carts?.length === 0 && 'disabled'}`}>
 							送出訂單
 						</button>
 					</div>
-
 				</form>
 			</div>
 		</div>
